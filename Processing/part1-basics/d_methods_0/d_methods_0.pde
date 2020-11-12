@@ -10,7 +10,7 @@ void setup(){
 void draw(){
   //background(40);
   increase_x(); // calling function increase_x()
-  if (x > 5.0){
+  if (x > 6.0){
     textSize(32);
     fill(random(255), 100.0, 100.0);
     text("hi! - ", random(width), random(height)); 
@@ -23,5 +23,8 @@ void increase_x(){
 }
 
 //void mousePressed(){
-//  background(40);
+//  println("mousePressed! - " + random(1000));
+//}
+//void mouseDragged(){
+//  println("mouseDragged! - " + random(1000));
 //}
