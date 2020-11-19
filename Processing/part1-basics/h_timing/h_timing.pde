@@ -1,4 +1,4 @@
-float x = 100.0, y = 100.0, col = 50.0;
+float x = 100.0, y = 100.0, col = 50.0, incr = 100;
 
 float current_time = 0;
 
@@ -10,8 +10,9 @@ void setup(){
 void draw(){
   //background(0);
   
-  if (millis() >= current_time+500){
-    current_time = millis();
+  if (millis() >= current_time+incr){
+    // current_time = millis();
+    current_time += incr;
     x = random(width);
     y = random(height);
     col = 200 + random(55);

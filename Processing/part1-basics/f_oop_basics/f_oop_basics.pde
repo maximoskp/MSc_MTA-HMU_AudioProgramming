@@ -14,9 +14,11 @@ void draw(){
 
 void mouseDragged(){
   h.move_myself(mouseX, mouseY);
+  // println( h.x + " - " + h.y );
 }
 void mousePressed(){
   h.move_myself(mouseX, mouseY);
+  // println( h.x + " - " + h.y );
 }
 
 class Human{
