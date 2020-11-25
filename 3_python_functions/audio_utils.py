@@ -9,6 +9,26 @@ Created on Mon Nov 23 15:20:13 2020
 
 import numpy as np
 
+def make_sine( freq=440 , amp=0.5 , phase=0.0 , dur_secs=0.5 , sr=44100 ):
+    t = np.arange(dur_secs*sr)/sr
+    return amp*np.sin( 2*np.pi*freq*t )
+
+def make_adsr( a=0.01 , d=0.03, s_level=0.3 , r=0.1 , dur_secs=0.5 , sr=44100 ):
+    a_samples = int(np.floor(a*sr))
+    d_samples = int(np.floor(d*sr))
+    r_samples = int(np.floor(r*sr))
+    total_samples = int(np.floor(dur_secs*sr))
+    s_samples = total_samples - r_samples - a_samples - d_samples
+    a_part = np.linspace( 0, 1, a_samples )
+    d_part = np.linspace( 1, s_level, d_samples )
+    s_part = np.linspace( s_level, s_level, s_samples )
+    r_part = np.linspace( s_level, 0, r_samples )
+    return np.hstack( ( a_part , d_part , s_part , r_part ) )
+
+def make_sine_with_adsr( freq=440 , amp=0.5 , phase=0.0 , adsr=np.ones(22050), sr=44100 ):
+    t = np.arange(adsr.size)/sr
+    return amp*np.sin( 2*np.pi*freq*t )*adsr
+
 def get_part( r , s=0 , e=-1 ):
     # r: recording numpy array
     # s: starting sample
@@ -60,6 +80,12 @@ def get_stereo_random_part( r , s=0 , e=-1 , d_min=1000 , d_max=1000 , pan=0.5 )
     return np.vstack( ( pan*p , (1-pan)*p ) ).T
 
 # ====================== EXERCISES =============================
+# hint: check random composition in example 1
+# --
+# --
+# For bonus points: Implement all functions in audio_utils.py and
+# your granular synth using functions that accept argumetns as
+# arbitrary dictionaries, e.g. def get_stereo_random_part( **args )
 # --
 # --
 # Exercise 1: Make a function that returns a random stereo part
