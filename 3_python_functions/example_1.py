@@ -38,7 +38,7 @@ sr = 44100
 composition_samples = composition_duration*sr
 c = np.zeros( ( composition_samples , 2 ) )
 # let's place a number of notes randomly
-n = 500
+n = 5000
 for i in range( n ):
     # random note
     f = np.random.randint(50, 5000)

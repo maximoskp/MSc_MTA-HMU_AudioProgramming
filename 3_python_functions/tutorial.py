@@ -79,13 +79,17 @@ def fun_with_mult_args( a1 , a2 , a3 ):
 # call function
 print( 'multiple arguments example: ' + str( fun_with_mult_args( 1 , 2 , 3 ) ) )
 
+
+
 # multiple returns
 def fun_with_mult_args( a1 , a2 , a3 ):
     return a1 + a2 ** a3 , (a1+a2)**a3
 
 # call function
 r1 , r2 = fun_with_mult_args( 1 , 2 , 3 )
+# r = fun_with_mult_args( 1 , 2 , 3 ) # equally valid but returns tuple
 print( 'multiple returns example: r1: ' + str( r1 ) + ' - r2: ' + str( r2 ) )
+
 
 
 # arbitrarily many arguments

@@ -9,7 +9,7 @@ void setup() {
   size(640, 480);
   // start oscP5, listening for incoming messages at port 9000
   oscP5 = new OscP5(this,9000);
-  // send to port 12000
+  // send to port 5005
   dest = new NetAddress("127.0.0.1",5005);
   
 }
