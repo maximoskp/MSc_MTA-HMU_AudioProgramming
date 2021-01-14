@@ -13,6 +13,7 @@ float current_time;
 
 Minim minim;
 AudioOutput out;
+// for 2D ArrayList https://forum.processing.org/one/topic/2d-arraylist.html
 ArrayList<Sampler> s = new ArrayList<Sampler>();
 ArrayList<MoogFilter> b = new ArrayList<MoogFilter>();
 ArrayList<Gain> g = new ArrayList<Gain>();
