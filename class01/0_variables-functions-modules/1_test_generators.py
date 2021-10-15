@@ -71,7 +71,7 @@ if play_audio:
 # %% sawtooth with adsr
 
 a = au.make_adsr( a=0.01 , d=0.01, s_level=0.3 , r=0.3 , dur_secs=dur , sr=sr )
-s = au.make_sawtooth_with_adsr( freq=5000 , amp=amp , phase=0.0 , adsr=a, sr=sr )
+s = au.make_sawtooth_with_adsr( freq=freq , amp=amp , phase=0.0 , adsr=a, sr=sr )
 
 '''
 sp = np.fft.fft( s[:1024] )
