@@ -1,4 +1,4 @@
-# MSc_MTA-HMU_AudioProgramming
+# BSc_MTA-HMU_AudioProgramming
 
 0) If you run on windows, download Git for windows here (select 64-bit Git for Windows Setup):
 https://git-scm.com/download/win 
