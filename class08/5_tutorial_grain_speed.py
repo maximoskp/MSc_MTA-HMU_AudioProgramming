@@ -10,7 +10,7 @@ CAUTION
 - make sure you understand how linspace works
 - keep in mind that pitch alteration, using this technique, means length alteration
 - this technique is usefull in the context of granular synthesis
-- applying this technique for pitch shifitng larger audio segments without
+- applying this technique for pitch shifting larger audio segments without
   altering their size is possible, by splitting it in smaller overlapping
   grains and applying pitch shifting to them
 '''
