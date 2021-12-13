@@ -29,6 +29,7 @@ def callback( in_data, frame_count, time_info, status):
     b = np.zeros( (WINDOW_SIZE , CHANNELS) , dtype='int16' )
     b_even = f.readframes(WINDOW_SIZE)
     n = np.frombuffer( b_even , dtype='int16' )
+    # b[:,0] += np.hstack( ( n[::2], n[::2] ) )
     b[:,0] += n
     return (b, pyaudio.paContinue)
 
