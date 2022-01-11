@@ -52,6 +52,8 @@ def callback( in_data, frame_count, time_info, status):
     return (b, pyaudio.paContinue)
 
 # %% create output stream
+f.setpos(0)
+
 p = pyaudio.PyAudio()
 output = p.open(format=pyaudio.paInt16,
                 channels=CHANNELS,
@@ -66,7 +68,7 @@ output.start_stream()
 while len(global_block) == WINDOW_SIZE*2:
     plt.clf()
     plt.plot(fft_to_plot)
-    plt.axis([0,WINDOW_SIZE//8, -120,0])
+    plt.axis([0,WINDOW_SIZE//2, -120,0])
     plt.show()
     plt.pause(0.01)
 

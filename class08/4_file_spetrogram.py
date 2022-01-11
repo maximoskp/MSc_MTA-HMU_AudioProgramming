@@ -31,7 +31,7 @@ f = wave.open( 'audio_files/019.wav', 'rb' )
 
 # %% call back with global
 
-def callback( in_data, frame_count, time_info, status):
+def callback1( in_data, frame_count, time_info, status):
     global global_block, f, fft_frame, win, spec_img
     global_block = f.readframes(WINDOW_SIZE)
     n = np.frombuffer( global_block , dtype='int16' )
@@ -56,7 +56,7 @@ output = p.open(format=pyaudio.paInt16,
                 rate=RATE,
                 output=True,
                 frames_per_buffer=WINDOW_SIZE,
-                stream_callback=callback)
+                stream_callback=callback1)
 
 output.start_stream()
 

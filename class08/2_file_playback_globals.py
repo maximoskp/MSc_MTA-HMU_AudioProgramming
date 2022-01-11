@@ -52,7 +52,10 @@ output.start_stream()
 f.setpos(0)
 
 # after starting, check when n empties (file ends) and stop
-while len(global_block) == WINDOW_SIZE*2:
+# while len(global_block) > 0: # NOT WORKING as intended
+keep_plotting = True
+# while len(global_block) == WINDOW_SIZE*2:
+while keep_plotting:
     plt.clf()
     plt.plot(b)
     plt.axis([0,WINDOW_SIZE, -2**15, 2**15])
@@ -60,9 +63,16 @@ while len(global_block) == WINDOW_SIZE*2:
     plt.pause(0.01)
     sleep(0.01)
     print('global_block: ' + str(len(global_block)))
+    if len(global_block) < WINDOW_SIZE*2:
+        keep_plotting = False
 
 print('stopping audio')
 output.stop_stream()
+
+plt.clf()
+plt.plot(b)
+plt.axis([0,WINDOW_SIZE, -2**15, 2**15])
+plt.show()
 
 # %% let's start over and introduce some keyboard controls
 

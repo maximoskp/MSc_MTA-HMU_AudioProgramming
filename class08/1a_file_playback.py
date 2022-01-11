@@ -21,6 +21,7 @@ def load_sound_file_into_memory( path ):
     return audio_data
 
 f = load_sound_file_into_memory( 'audio_files/019.wav' )
+# f = load_sound_file_into_memory( 'audio_files/test_stereo.wav' )
 
 # %%
 
