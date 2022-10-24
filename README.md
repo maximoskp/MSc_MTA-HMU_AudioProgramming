@@ -70,16 +70,23 @@ The best way to do it, if you don't have Mac M1 computer, is through the Anacond
 
 
 Install interactive extension
+
 pip install ipywidgets
+
 pip install jupyterlab
+
 jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
 You might also need to
+
 conda install matplotlib
 
 - Useful libraries
 
 to install with pip install
+
 numpy
+
 matplotlib
+
 librosa
