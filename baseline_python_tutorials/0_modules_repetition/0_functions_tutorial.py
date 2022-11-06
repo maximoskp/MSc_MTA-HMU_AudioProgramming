@@ -8,7 +8,7 @@ thisdict =	{
   'brand': 'Ford',
   'model': 'Mustang',
   'year': 1964,
-  'descriptions': ['awsome', 'badass', 'neat']
+  'descriptions': ['awesome', 'badass', 'neat']
 }
 print(thisdict['model'])
 # or with dummy initialization
@@ -16,6 +16,10 @@ d = {}
 d['name'] = 'max'
 d['age'] = 9261
 d['weight'] = 234523
+d['studies'] = {
+    'BSc': 'Mathematics',
+    'MSc': 'AI'
+}
 # get keys as a list
 print( 'keys: ' + repr( list( d.keys() ) ) )
 # get values as a list
@@ -30,13 +34,35 @@ print('this is mylist', mylist) # this is ok
 a_number = 3
 # print('this is mylist' + mylist + ' and this is a number: ' + str(a_number) ) # but this will create an error
 s = repr( mylist )
-print('this is mylist' + repr( mylist ) + ' and this is a number: ' + str(a_number) )
+print('this is mylist: ' + repr( mylist ) + ' and this is a number: ' + str(a_number) )
 
 
 # %%
 
 # for nice tutorials on functions:
 # https://www.w3schools.com/python/python_functions.asp
+
+def double_this_number( x ):
+    y = 2*x
+    return y
+# end double_this_number
+
+# %% 
+
+h = double_this_number( 5 )
+print( double_this_number(10) )
+
+# %% 
+
+import time
+
+def show_current_time():
+    print(time.monotonic_ns())
+# end show_current_time
+
+show_current_time()
+
+# %%
 
 # some basic parts that concern our course
 # global variables
@@ -100,7 +126,9 @@ def fun_with_mult_args( a1 , a2 , a3 ):
     return a1 + a2 ** a3 , (a1+a2)**a3
 
 # call function
-r1 , r2 = fun_with_mult_args( 1 , 2 , 3 )
+r1 , r2 = fun_with_mult_args( 15 , 52 , 36 )
+# r1 , r2 = fun_with_mult_args( a2=15 , a1=52 , a3=36 )
+# _ , r2 = fun_with_mult_args( 1 , 2 , 3 )
 # r = fun_with_mult_args( 1 , 2 , 3 ) # equally valid but returns tuple
 print( 'multiple returns example: r1: ' + str( r1 ) + ' - r2: ' + str( r2 ) )
 
@@ -119,7 +147,7 @@ def fun_with_arb_mult_args( *args ):
     return y
 
 # call function
-print( 'arbitrary arguments example: ' + str( fun_with_arb_mult_args( 2 , 3 ) ) )
+print( 'arbitrary arguments example: ' + str( fun_with_arb_mult_args( 2 , 3, 5, 7 ) ) )
 
 
 # %%

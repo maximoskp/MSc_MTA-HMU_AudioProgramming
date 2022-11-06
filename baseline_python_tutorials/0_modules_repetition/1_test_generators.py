@@ -27,6 +27,7 @@ if play_audio:
 # %% sine
 
 s = au.make_sine( freq=freq , amp=amp , phase=0.0 , dur_secs=dur , sr=sr )
+# s = au.make_sine( dur_secs=2 )
 
 if play_audio:
     sd.play( s , sr )
