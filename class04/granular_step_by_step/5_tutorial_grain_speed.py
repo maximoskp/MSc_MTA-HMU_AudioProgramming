@@ -32,7 +32,7 @@ sd.play( s_original , sr )
 # %%
 
 # select a speed/pitch value
-pitch_multiplier = 1.5
+pitch_multiplier = 2
 
 # alter length according to inverse pitch_multiplier
 s_altered = s_original[ np.linspace( 0 , s_original.size, int(s_original.size/pitch_multiplier) , endpoint=False).astype(int) ]

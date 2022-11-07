@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 
 filename = 'audio_files/celloSampleStereo.wav'
 
-y, sr = librosa.load(filename)
+y, sr = librosa.load(filename, sr=44100)
 
 # to following function already applies a hanning window to the grain
 # create a new function or expand this function by adding an argument
