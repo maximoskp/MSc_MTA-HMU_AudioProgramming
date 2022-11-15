@@ -27,8 +27,8 @@ user_continue = True
 
 while user_continue:
     b = np.zeros( (WINDOW_SIZE , CHANNELS) , dtype='int16' )
-    b_even = f.readframes(WINDOW_SIZE)
-    n = np.frombuffer( b_even , dtype='int16' )
+    b_bytes = f.readframes(WINDOW_SIZE)
+    n = np.frombuffer( b_bytes , dtype='int16' )
     plt.plot(n)
     plt.axis([0,WINDOW_SIZE, -2**15, 2**15])
     plt.show()
@@ -39,14 +39,14 @@ while user_continue:
         user_continue = False
 
 # %% it is not possible to have a callback that uses the same principles but also draws
-# matplotlib needs to be called within the main thread...
-# the following callback will NOT plot
+# matplotlib needs to be called within the main thread, not a high priority thread...
+# the following callback will NOT plot - will not work
 
 def impossible_callback( in_data, frame_count, time_info, status):
     # begin with a zero buffer
     b = np.zeros( (WINDOW_SIZE , CHANNELS) , dtype='int16' )
-    b_even = f.readframes(WINDOW_SIZE)
-    n = np.frombuffer( b_even , dtype='int16' )
+    b_bytes = f.readframes(WINDOW_SIZE)
+    n = np.frombuffer( b_bytes , dtype='int16' )
     plt.plot(n)
     plt.axis([0,WINDOW_SIZE, -2**15, 2**15])
     plt.show()

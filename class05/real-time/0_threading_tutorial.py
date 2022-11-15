@@ -63,5 +63,7 @@ t = Thread( target = user_input_thread )
 user_keyboard_input = t.start()
 print('this does print while user input is pending')
 
+
 while not user_input_provided:
-    sleep(0.1)
+    print('still sleeping')
+    sleep(2.0)

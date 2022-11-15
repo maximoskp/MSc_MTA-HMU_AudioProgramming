@@ -17,7 +17,7 @@ RATE = 44100
 
 # global
 global_block = np.zeros( WINDOW_SIZE*2 )
-# b = np.zeros( (WINDOW_SIZE , CHANNELS) , dtype='int16' )
+b = np.zeros( (WINDOW_SIZE , CHANNELS) , dtype='int16' )
 
 #------------------------------------------------------------------------------------
 

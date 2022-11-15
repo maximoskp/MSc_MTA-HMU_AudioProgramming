@@ -25,13 +25,17 @@ f = load_sound_file_into_memory( 'audio_files/019.wav' )
 
 # %%
 
+f.setpos(0)
+
 def callback( in_data, frame_count, time_info, status):
     # begin with a zero buffer
     b = np.zeros( (WINDOW_SIZE , CHANNELS) , dtype='int16' )
-    b_even = f.readframes(WINDOW_SIZE)
-    n = np.frombuffer( b_even , dtype='int16' )
-    # b[:,0] += np.hstack( ( n[::2], n[::2] ) )
-    b[:,0] += n
+    b_bytes = f.readframes(WINDOW_SIZE)
+    n = np.frombuffer( b_bytes , dtype='int16' )
+    # Εφαρμόζουμε ένα εφέ "οκτάβα πάνω".
+    # Όλη η επεξεργασία, συμβαίνει εδώ.
+    b[:,0] += np.hstack( ( n[::2], n[::2] ) )
+    # b[:,1] += n
     return (b, pyaudio.paContinue)
 
 def create_start_running_output_stream():

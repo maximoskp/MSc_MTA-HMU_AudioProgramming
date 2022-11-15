@@ -26,7 +26,9 @@ print( 'x: ' + str(x) + ' - y: ' + str(y) )
 
 x = 10
 y = x # can be considered as deep copy
+print('before y += 1: id(x): ' + str(id(x)) + ' - id(y): ' + str(id(y)))
 y += 1
+print('after y += 1: id(x): ' + str(id(x)) + ' - id(y): ' + str(id(y)))
 print( 'x: ' + str(x) + ' - y: ' + str(y) )
 
 # %%
@@ -57,6 +59,7 @@ print( 'x: ' + repr(x) + ' - y: ' + repr(y) )
 
 x = [1,2,3]
 y = copy.deepcopy( x ) # deep copy and...
+print('after deepcopy: id(x): ' + str(id(x)) + ' - id(y): ' + str(id(y)))
 y[0] = 4
 y[1] = 5
 y[2] = 6 # new addresses have been created

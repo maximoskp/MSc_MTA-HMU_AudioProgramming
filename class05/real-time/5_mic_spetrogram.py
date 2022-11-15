@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 from time import sleep
 from threading import Thread
 
-WINDOW_SIZE = 2048
+WINDOW_SIZE = 4096
 CHANNELS = 1
 RATE = 44100
 
@@ -70,7 +70,7 @@ device_out_idx = 0
 # show devices
 for i in range(p.get_device_count()):
     device_info = p.get_device_info_by_index(i)
-    # print(device_info)
+    print(device_info)
     if 'Microphone' in device_info['name']:
         print('input device: ')
         print(device_info)
