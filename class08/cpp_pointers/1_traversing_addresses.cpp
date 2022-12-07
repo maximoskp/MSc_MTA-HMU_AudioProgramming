@@ -4,14 +4,14 @@ using namespace std;
 int main(){
     int x = 5;
     // getting address via a pointer
-    int *pointer_to_x = &x;
+    int* pointer_to_x = &x;
     // pointers to other types
     double d = 3.14;
     // pointer is of the same type that it is pointing to
-    double *pointer_to_d = &d;
+    double* pointer_to_d = &d;
     
     // moving to next address
-    int *next_of_x = pointer_to_x + 1;
+    int* next_of_x = pointer_to_x + 1;
     cout << "pointer to x: " << pointer_to_x << endl;
     cout << "next address of x: " << pointer_to_x + 1 << endl;
     cout << "size of int: " << sizeof(int) << endl;
@@ -19,7 +19,7 @@ int main(){
     cout << "size of pointer_to_x: " << sizeof(pointer_to_x) << endl;
     cout << "------------------------------------" << endl;
     // moving to next address
-    double *next_of_d = pointer_to_d + 1;
+    double* next_of_d = pointer_to_d + 1;
     cout << "pointer to d: " << pointer_to_d << endl;
     cout << "next address of d: " << pointer_to_d + 1 << endl;
     cout << "size of double: " << sizeof(double) << endl;

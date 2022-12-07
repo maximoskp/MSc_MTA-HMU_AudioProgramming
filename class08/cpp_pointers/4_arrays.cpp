@@ -7,7 +7,7 @@ int main(){
     // actual value of variable
     cout << "value of variable representing the array: " << array_of_ints << endl;
     // pointer of first element of the array
-    int *pointer_to_first = &array_of_ints[0];
+    int* pointer_to_first = &array_of_ints[0];
     cout << "value of pointer to the first element   : " << pointer_to_first << endl;
     // modify element via array index:
     array_of_ints[2] = 42;
