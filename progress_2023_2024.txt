@@ -1,0 +1,14 @@
+class01
+Simple analysis of sinusoidal waveforms. Lists in python and in numpy. Making a sinusoidal waveform with numpy. Exercise with harmonics construction in python.
+
+class02
+Dictionaries, for, while, if (measuring how slow for is) and functions full (including *args and **kwargs). Function for making sinusoidal waveform. TODO: exercise on making a function for constructing harmonics.
+
+clas03
+Functions, loops.
+
+class04
+Nyquist frequency, shallow copy, classes, adsr, anaconda - spyder
+
+class05
+Quantizatin, audio coding in files, real-time audio in python, git.
