@@ -64,8 +64,8 @@ def user_input_function():
 # %% check available devices
 p = pyaudio.PyAudio()
 # keep index for input and output devices
-device_in_idx = 0
-device_out_idx = 0
+device_in_idx = 1
+device_out_idx = 3
 
 # show devices
 for i in range(p.get_device_count()):
