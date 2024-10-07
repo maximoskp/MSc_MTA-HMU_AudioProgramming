@@ -1,0 +1,1 @@
+c.ServerApp.browser = u'C:/Home/AppData/Local/Google/Chrome/Application/chrome.exe %s'
